@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+  <title>Vinay ❤️ Ananya — Save the Date</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --accent:#41AEA9; --bg:#F5FCFC; --card:#ffffff; --muted:#6b6b6b;
+      --love:#C62828; --gold: #D4AF37;
+    }
+    *{box-sizing:border-box}html,body{height:100%;margin:0;padding:0}
+    body{font-family:Poppins,system-ui,Arial;background:linear-gradient(180deg,var(--bg),#fff);color:#213E3B;overflow-x:hidden}
+
+    .desktop-overlay{display:none}
+    @media(min-width:900px){
+      .app{display:none}
+      .desktop-overlay{display:flex;align-items:center;justify-content:center;height:100vh;background:#f7f7f7;color:#333}
+      .desktop-card{background:#fff;padding:28px;border-radius:14px;box-shadow:0 8px 30px rgba(0,0,0,0.06);max-width:560px;text-align:center}
+    }
+
+    .app{max-width:420px;margin:0 auto;min-height:100vh;padding:14px}
+    header{display:flex;gap:12px;align-items:center;margin-top:8px}
+    .logo{width:64px;height:64px;border-radius:12px;overflow:hidden;flex:0 0 64px}
+    .logo img{width:100%;height:100%;object-fit:cover}
+    h1{margin:0;font-size:20px;font-family:'Playfair Display',serif}
+    p.lead{margin:4px 0;color:var(--muted);font-size:13px}
+
+    .section{background:var(--card);border-radius:14px;padding:14px;margin:12px 0;box-shadow:0 6px 18px rgba(33,62,59,0.06);transform-style:preserve-3d;will-change:transform;overflow:hidden}
+    .hero-3d{height:260px;border-radius:12px;overflow:hidden;position:relative}
+    .hero-3d .layer{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform 0.18s linear}
+    .layer.back{transform:translateZ(-60px) scale(1.25)}
+    .layer.mid{transform:translateZ(-30px) scale(1.12)}
+    .layer.front{transform:translateZ(0) scale(1);display:flex;align-items:flex-end;padding:16px;color:white}
+
+    .badge{position:absolute;left:50%;top:18px;transform:translateX(-50%);z-index:6}
+
+    .love-quote{font-family:'Great Vibes',cursive;font-size:22px;color:var(--love);text-align:center;margin:10px 0}
+
+    .gallery-grid{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px}
+    .gallery-grid img{width:160px;height:120px;object-fit:cover;border-radius:10px;flex:0 0 auto;cursor:pointer;transition:transform 220ms}
+
+    .timeline .event{display:flex;gap:10px;align-items:center}
+    .timeline .dot{width:10px;height:10px;background:var(--accent);border-radius:50%}
+
+    h2.name{font-family:'Playfair Display',serif;font-size:18px;margin:8px 0}
+    .sub{color:var(--muted);font-size:13px}
+
+    button,input,textarea,select{font-family:inherit}
+    .red-small{color:var(--love);font-family:'Great Vibes',cursive;font-size:18px}
+    .reveal{opacity:0;transform:translateY(16px);transition:all 560ms cubic-bezier(.2,.9,.2,1)}
+    .reveal.show{opacity:1;transform:translateY(0)}
+
+    /* ---- New Preloader: Elegant Gold Ring with V & A initials ---- */
+    #preloader{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,#fff,#F8FCFC);z-index:9999}
+    .loader-wrap{display:flex;flex-direction:column;align-items:center;gap:12px}
+    .gold-ring{width:120px;height:120px;border-radius:50%;display:flex;align-items:center;justify-content:center;position:relative}
+    .ring-outer{position:absolute;inset:0;border-radius:50%;border:6px solid rgba(212,175,55,0.14);}
+    .ring-arc{position:absolute;inset:6px;border-radius:50%;border:6px solid transparent;border-top-color:var(--gold);transform-origin:center;animation:spin 1.6s linear infinite}
+    @keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+    .initials{position:relative;z-index:4;font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--gold);letter-spacing:2px;animation:initialsPop 1.2s ease-in-out infinite}
+    @keyframes initialsPop{0%{transform:scale(0.94)}40%{transform:scale(1.05)}100%{transform:scale(0.94)}}
+    .sparkle{position:absolute;width:10px;height:10px;border-radius:50%;background:var(--gold);opacity:0.9;filter:blur(0.5px);animation:spark 1.8s infinite}
+    .sparkle.s1{top:6px;left:50%;transform:translateX(-50%);animation-delay:0s}
+    .sparkle.s2{bottom:12px;right:18px;animation-delay:0.3s}
+    .sparkle.s3{top:22px;right:14px;animation-delay:0.6s}
+    @keyframes spark{0%{transform:scale(0.6);opacity:0.8}50%{transform:scale(1.2);opacity:0.2}100%{transform:scale(0.6);opacity:0.8}}
+
+    /* small caption */
+    .loader-caption{font-size:13px;color:var(--muted)}
+
+    /* Responsive tweak */
+    @media (max-width:360px){.gold-ring{width:96px;height:96px}.initials{font-size:22px}}
+  </style>
+</head>
+<body>
+  <div class="desktop-overlay">
+    <div class="desktop-card">
+      <h2>This site is mobile-only</h2>
+      <p style="color:var(--muted)">For the best experience with animations and effects, open this site on a mobile device. If you want a QR code to open this on phone, I can generate it for you.</p>
+    </div>
+  </div>
+
+  <div class="app" id="app">
+    <!-- New Preloader -->
+    <div id="preloader">
+      <div class="loader-wrap" role="status" aria-label="Loading">
+        <div class="gold-ring" aria-hidden="true">
+          <div class="ring-outer"></div>
+          <div class="ring-arc"></div>
+          <div class="sparkle s1"></div>
+          <div class="sparkle s2"></div>
+          <div class="sparkle s3"></div>
+          <div class="initials">V &amp; A</div>
+        </div>
+        <div class="loader-caption">Vinay &amp; Ananya — Saving the Date</div>
+      </div>
+    </div>
+
+    <header>
+      <div class="logo"><img src="https://images.unsplash.com/photo-1526045612212-70caf35c14df" alt="logo"></div>
+      <div>
+        <h1>Vinay <span style="color:var(--love)">❤</span> Ananya</h1>
+        <p class="lead">20 December 2025 • Kerala</p>
+      </div>
+    </header>
+
+    <main>
+      <section class="section hero-3d" id="hero">
+        <div class="layer back" style="background-image:url('https://images.unsplash.com/photo-1517841905240-472988babdf9');filter:blur(2px) brightness(0.95)"></div>
+        <div class="layer mid" style="background-image:url('https://images.unsplash.com/photo-1499951360447-b19be8fe80f5');opacity:0.98"></div>
+        <div class="layer front" style="background-image:linear-gradient(to bottom, rgba(0,0,0,0.18), rgba(0,0,0,0.38)), url('https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e');">
+          <div style="width:100%">
+            <div class="badge">
+              <div class="heart-badge" id="heartBadge" title="Touch for love" style="width:84px;height:84px;border-radius:999px;background:linear-gradient(135deg,#FF9AA2,#FF6B6B);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 30px rgba(255,107,107,0.18);transform-origin:center;animation:float 3.5s ease-in-out infinite">
+                <svg viewBox="0 0 24 24" aria-hidden="true" style="width:42px;height:42px;fill:white"><path d="M12 21s-7-4.35-9.2-6.2C-0.4 11.6 2 7 6 7c1.8 0 3.4 1 4 2.4C10.6 8 12.2 7 14 7c4 0 6.4 4.6 3.2 7.8C19 16.65 12 21 12 21z"></path></svg>
+              </div>
+            </div>
+            <div style="position:absolute;left:18px;bottom:22px;color:white">
+              <div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:700">Vinay &amp; Ananya</div>
+              <div style="font-size:14px;color:rgba(255,255,255,0.9)">Join our celebration — 20 December 2025</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reveal" id="quote">
+        <div class="love-quote">"The journey of two hearts, bound in endless love."</div>
+        <div style="text-align:center;margin-top:6px;color:var(--muted);font-size:13px">— Vinay &amp; Ananya</div>
+      </section>
+
+      <section class="section reveal" id="about">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <div>
+            <h2 class="name">Vinay — Ananya</h2>
+            <div class="sub">Beginning a Beautiful Journey Together</div>
+          </div>
+          <div style="text-align:right;color:var(--muted);font-size:13px">Wedding Ceremony: 10:00 AM</div>
+        </div>
+      </section>
+
+      <section class="section reveal" id="gallery">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+          <strong>Gallery — Loving Memories</strong>
+          <small style="color:var(--muted)">Swipe →</small>
+        </div>
+        <div class="gallery-grid" id="glist">
+          <img src="images/photo1.jpg" alt="p1">
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e" alt="p2">
+          <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e" alt="p3">
+          <img src="images/photo4.jpg" alt="p4">
+          <img src="images/photo5.jpg" alt="p5">
+        </div>
+      </section>
+
+      <section class="section reveal timeline" id="timeline">
+        <strong>Event Timeline</strong>
+        <div style="height:10px"></div>
+        <div class="event"><div class="dot"></div><div style="margin-left:6px">Wedding Ceremony — 10:00 AM</div></div>
+        <div style="height:8px"></div>
+        <div class="event"><div class="dot"></div><div style="margin-left:6px">Reception — 1:00 PM</div></div>
+      </section>
+
+      <section class="section reveal" id="video">
+<strong>Our Wedding Teaser</strong>
+<video controls style="width:100%;border-radius:12px;margin-top:10px">
+<source src="video.mp4" type="video/mp4">
+</video>
+</section>
+
+      <div style="height:90px"></div>
+    </main>
+
+    <footer style="text-align:center;color:var(--muted);font-size:12px;margin:12px 0">
+  <div class="red-small">Join us in love ❤️</div>
+  <div style="margin-top:6px">© 2025 Vinay & Ananya — Designed by Fwebcreation</div>
+</footer>
+
+  </div>
+
+  <script>
+    // Preloader hide: fade out after DOM ready
+    document.addEventListener('DOMContentLoaded',()=>{
+      setTimeout(()=>{
+        const pre=document.getElementById('preloader');
+        if(pre){pre.style.opacity='0';pre.style.transition='opacity 420ms ease';setTimeout(()=>pre.remove(),480)}
+      },900);
+    });
+
+    // Parallax on scroll (mobile optimized)
+    (function(){
+      const hero=document.getElementById('hero');
+      const layers=hero ? hero.querySelectorAll('.layer') : [];
+      function onScroll(){
+        if(!hero) return;
+        const rect=hero.getBoundingClientRect();
+        const h=window.innerHeight;
+        const progress = Math.max(0, Math.min(1, 1 - (rect.bottom / (h + rect.height))));
+        layers.forEach((layer, i)=>{
+          const depth = i===0? -40 : i===1? -20 : 0;
+          const move = progress * (Math.abs(depth));
+          layer.style.transform = `translateY(${move}px) translateZ(${depth}px) scale(${1 + Math.abs(depth)/300})`;
+        });
+      }
+      window.addEventListener('scroll',onScroll,{passive:true});
+      onScroll();
+    })();
+
+    // Touch/click heart interaction (small pop + tiny hearts)
+    const heartBadge = document.getElementById('heartBadge');
+    heartBadge && heartBadge.addEventListener('click',()=>{
+      heartBadge.classList.remove('heart-pop');void heartBadge.offsetWidth;heartBadge.classList.add('heart-pop');
+      for(let i=0;i<6;i++) createTinyHeart();
+    });
+    function createTinyHeart(){
+      const el=document.createElement('div');el.style.position='fixed';el.style.width='14px';el.style.height='14px';el.style.pointerEvents='none';el.style.left=(window.innerWidth/2 + (Math.random()*120 - 60))+'px';el.style.top=(150 + Math.random()*40)+'px';el.style.background='radial-gradient(circle at 30% 30%, #fff, transparent), var(--love)';el.style.borderRadius='4px';el.style.opacity='0.95';el.style.transform='translateY(0) scale(0.8) rotate(20deg)';el.style.transition='all 900ms cubic-bezier(.2,.9,.2,1)';document.body.appendChild(el);setTimeout(()=>{el.style.transform='translateY(-160px) scale(1) rotate(40deg)';el.style.opacity='0';},60);setTimeout(()=>el.remove(),980);
+    }
+
+    // reveal on scroll
+    const reveals = document.querySelectorAll('.reveal');
+    const obs = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('show'); });
+    },{threshold:0.18});
+    reveals.forEach(r=>obs.observe(r));
+
+    // gallery click preview
+    document.querySelectorAll('.gallery-grid img').forEach(img=>{
+      img.addEventListener('click',()=>{const src=img.src;const lb=document.createElement('div');lb.style.position='fixed';lb.style.inset=0;lb.style.background='rgba(0,0,0,0.8)';lb.style.display='flex';lb.style.alignItems='center';lb.style.justifyContent='center';lb.style.zIndex=9999;const im=document.createElement('img');im.src=src;im.style.maxWidth='92%';im.style.maxHeight='86%';im.style.borderRadius='10px';lb.appendChild(im);document.body.appendChild(lb);lb.addEventListener('click',()=>lb.remove());});
+    });
+
+    // download button
+    document.getElementById('downloadBtn').addEventListener('click',()=>{const a=document.createElement('a');a.href='https://images.unsplash.com/photo-1529634806980-34f07a1d1f8d';a.download='Save-the-Date-Vinay-Ananya.jpg';document.body.appendChild(a);a.click();a.remove()});
+  </script>
+</body>
+</html>
